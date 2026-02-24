@@ -22,6 +22,6 @@ urlpatterns = [
     
 
 
-
+    path('diyprojects/', include('diyprojects.urls', namespace="diyprojects")),
     
 ]
