@@ -20,7 +20,7 @@ class Book(models.Model):
     genre = models.ForeignKey(
         Genre, 
         on_delete=models.CASCADE, 
-        related_name='genre'
+        related_name='books'
     )
     author = models.CharField(max_length=255)
     publication_year = models.IntegerField()
