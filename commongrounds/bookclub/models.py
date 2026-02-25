@@ -17,7 +17,11 @@ class Genre(models.Model):
 
 class Book(models.Model):
     title = models.CharField(max_length=255)
-    genre = models.ForeignKey(BookCategory, on_delete=models.CASCADE, related_name='books')
+    genre = models.ForeignKey(
+        Genre, 
+        on_delete=models.CASCADE, 
+        related_name='genre'
+    )
     author = models.CharField(max_length=255)
     publication_year = models.IntegerField()
     created_on = models.DateTimeField()
