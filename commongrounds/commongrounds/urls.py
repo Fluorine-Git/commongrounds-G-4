@@ -21,7 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     
 
-
+    path('bookclub/', include('bookclub.urls', namespace="bookclub")),
 
     
 ]
