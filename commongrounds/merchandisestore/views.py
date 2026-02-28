@@ -4,7 +4,7 @@ from django.views.generic import (
     ListView,
     # DetailView,
 )
-from .models import Product
+from .models import Product, ProductType
 
 
 class MerchandiseStoreListView(ListView):

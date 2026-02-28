@@ -4,7 +4,9 @@
 {% endblock %}
 
 {% block contents %}
-    {% for instance in objects_list %}
-        <p>{{ instance.id }} - {{ instance.name }}</p>
-    {% endfor %}
+    <ol>
+        {% for instance in object_list %}
+            <li>{{ instance.name }}</li>
+        {% endfor %}
+    </ol>
 {% endblock %}
