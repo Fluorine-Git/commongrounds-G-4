@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block header %}
+<h2>Merchandise Store</h2>
+{% endblock %}
+
+{% block contents %}
+    {% for instance in objects_list %}
+        <p>{{ instance.id }} - {{ instance.name }}</p>
+    {% endfor %}
+{% endblock %}
