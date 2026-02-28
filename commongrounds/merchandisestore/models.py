@@ -9,6 +9,9 @@ class ProductType(models.Model):
     class Meta:
         ordering = ['name']
 
+    def __str__(self):
+        return f"{self.name}"
+
 
 class Product(models.Model):
     name = models.CharField(max_length=255)
@@ -22,3 +25,6 @@ class Product(models.Model):
 
     class Meta:
         ordering = ['name']
+
+    def __str__(self):
+        return f"{self.name}"
