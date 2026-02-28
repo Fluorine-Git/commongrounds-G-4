@@ -2,9 +2,9 @@ from django.shortcuts import render, get_object_or_404
 
 from django.views.generic import (
     ListView,
-    # DetailView,
+    DetailView,
 )
-from .models import Product, ProductType
+from .models import Product
 
 
 class MerchandiseStoreListView(ListView):
@@ -12,10 +12,10 @@ class MerchandiseStoreListView(ListView):
     queryset = Product.objects.all()  # blog/<modelname>_list.html
 
 
-# class MerchandiseDetailView(DetailView):
-#     template_name = 'merchandisestore/merchandisestore_detail.html'
-#     # queryset = Article.objects.all()
+class MerchandiseStoreDetailView(DetailView):
+    template_name = 'merchandisestore/merchandisestore_detail.html'
+    # queryset = Article.objects.all()
 
-#     def get_object(self):
-#         id_ = self.kwargs.get("id")
-#         return get_object_or_404(Product, id=id_)
+    def get_object(self):
+        id_ = self.kwargs.get("id")
+        return get_object_or_404(Product, id=id_)
