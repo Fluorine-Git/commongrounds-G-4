@@ -18,8 +18,10 @@ class Product(models.Model):
     name = models.CharField(max_length=255)
     product_type = models.ForeignKey(
         ProductType,
-        on_delete=models.CASCADE,
-        related_name='products'
+        on_delete=models.SET_NULL,
+        related_name='products',
+        null=True,
+        blank=True
     )
     description = models.TextField()
     price = models.DecimalField(decimal_places=2, max_digits=100000)

@@ -6,8 +6,14 @@
 {% block contents %}
     <h3>{{object.name}}</h3>
     <ul>
-        <li>Product Type: {{object.product_type}}</li>
-        <li>Description: {{object.description}}</li>
-        <li>Price: {{object.price}}</li>
+        <li><strong>Product Type:</strong> {{object.product_type}}</li>
+        <li><strong>Description:</strong> {{object.description}}</li>
+        <li><strong>Price:</strong> {{object.price}}</li>
     </ul>
+    <button>Buy now!</button>
+    <a href='{% url 'merchandisestore:merchandisestore-list' %}'>
+        <button>
+            Go Back to Merchandise List
+        </button>
+    </a>
 {% endblock %}

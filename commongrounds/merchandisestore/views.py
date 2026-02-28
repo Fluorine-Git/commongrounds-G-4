@@ -4,12 +4,16 @@ from django.views.generic import (
     ListView,
     DetailView,
 )
-from .models import Product
+from .models import Product, ProductType
 
 
 class MerchandiseStoreListView(ListView):
     template_name = 'merchandisestore/merchandisestore_list.html'
-    queryset = Product.objects.all()  # blog/<modelname>_list.html
+    # queryset = Product.objects.all()
+    model = ProductType
+
+    def get_queryset(self):
+        return ProductType.objects.prefetch_related("products").order_by("name")
 
 
 class MerchandiseStoreDetailView(DetailView):
