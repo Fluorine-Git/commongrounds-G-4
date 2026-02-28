@@ -7,8 +7,8 @@ from django.views.generic import (
 from .models import Product, ProductType
 
 
-class MerchandiseStoreListView(ListView):
-    template_name = 'merchandisestore/merchandisestore_list.html'
+class MerchStoreListView(ListView):
+    template_name = 'merchstore/merchstore_list.html'
     # queryset = Product.objects.all()
     model = ProductType
 
@@ -16,8 +16,8 @@ class MerchandiseStoreListView(ListView):
         return ProductType.objects.prefetch_related("products").order_by("name")
 
 
-class MerchandiseStoreDetailView(DetailView):
-    template_name = 'merchandisestore/merchandisestore_detail.html'
+class MerchStoreDetailView(DetailView):
+    template_name = 'merchstore/merchstore_detail.html'
     # queryset = Article.objects.all()
 
     def get_object(self):
