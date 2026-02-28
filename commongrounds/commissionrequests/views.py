@@ -1,12 +1,17 @@
 from django.shortcuts import render
-from .models import Commission
+from .models import Commission, CommissionType
+
 
 def list_view(request):
-    commissions = Commission.objects.all()
-    dictionary = {"commissions" : commissions}
-    return render(request, 'comissionsrequests/commission_list.html', dictionary)
+    commission_requests = Commission.objects.all().order_by('created_on')
+    commission_types = CommissionType.objects.all().order_by('name')
+    dictionary = {
+        "commissions" : commission_requests,
+        "types" : commission_types,
+    }
+    return render(request, 'commissionrequests/commission_list.html', dictionary)
 
 def detail_view(request, pk):
     commission = Commission.objects.get(pk=pk)
     dictionary = {"commission" : commission}
-    return render(request, 'comissionsrequest/commission_detail.html', dictionary)
+    return render(request, 'commissionrequests/commission_detail.html', dictionary)

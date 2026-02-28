@@ -1,10 +1,11 @@
 {% extends "commissionrequests/base.html" %}
 
 {% block body %}
-    <h3> {commission.name} </h3>
+    <h3> {{commission.title}} </h3>
     <ul>
-        {% for commission in commission. %}
-            <a href='{{ recipe.get_absolute_url }}'>{{recipe.name}}</a>
-        {% endfor %}
+        <li>Description: {{commission.description}}</li>
+        <li>Number of People Required: {{commission.people_required}}</li>
+        <li>Created on: {{commission.created_on}}</li>
+        <li>Updated on: {{commission.updated_on}}</li>
     </ul>
 {% endblock %}
