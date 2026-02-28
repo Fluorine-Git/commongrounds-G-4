@@ -6,6 +6,7 @@ from .views import (
 
 app_name = 'merchandisestore'
 urlpatterns = [
-    path('', MerchandiseStoreListView.as_view(), name='merchandisestore-list'),
+    path('items/', MerchandiseStoreListView.as_view(),
+         name='merchandisestore-list'),
     # path('<int:id>/', ArticleDetailView.as_view(), name='article-detail'),
 ]

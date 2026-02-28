@@ -6,7 +6,7 @@
 {% block contents %}
     <ol>
         {% for instance in object_list %}
-            <li>{{ instance.name }}</li>
+            <li><a href='{{instance.get_absolute_url}}'>{{ instance.name }}</a></li>
         {% endfor %}
     </ol>
 {% endblock %}
