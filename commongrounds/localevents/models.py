@@ -9,13 +9,20 @@ class EventType(models.Model):
 
     def __str__(self):
         return '{}'.format(self.name)
+    
+    class Meta:
+        ordering = ['name',]
+        unique_together = ['name', 'description',]
+        verbose_name = 'genre'
+        verbose_name_plural = 'genres'
 
 class Event(models.Model):
     title = models.CharField(max_length=255)
     
     category = models.ForeignKey(
         EventType,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name='event'
     )
 
     description = models.TextField()
@@ -29,3 +36,15 @@ class Event(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
 
     updated_on = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return '{} last update on {}'.format(self.title, self.updated_on)
+    
+    def get_absolute_url(self):
+        return reverse('localevents:event_details', args=[str(self.pk)])
+    
+    class Meta:
+        ordering = ['start_time',]
+        unique_together = ['title', 'created_on',]
+        verbose_name = 'event'
+        verbose_name_plural = 'events'
