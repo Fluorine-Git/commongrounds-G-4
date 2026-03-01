@@ -13,8 +13,8 @@ class EventType(models.Model):
     class Meta:
         ordering = ['name',]
         unique_together = ['name', 'description',]
-        verbose_name = 'genre'
-        verbose_name_plural = 'genres'
+        verbose_name = 'event_type'
+        verbose_name_plural = 'event_types'
 
 class Event(models.Model):
     title = models.CharField(max_length=255)
@@ -22,7 +22,7 @@ class Event(models.Model):
     category = models.ForeignKey(
         EventType,
         on_delete=models.CASCADE,
-        related_name='event'
+        related_name='category'
     )
 
     description = models.TextField()
