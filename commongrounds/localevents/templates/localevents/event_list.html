@@ -8,13 +8,13 @@
 
     <div>
         <div>
-            {% for category in event_type_list %}
+            {% for category in categories %}
                 <h3><b>{{ category.name }}</b></h3>
                 <div>
                     <b>Description:</b> {{ category.description }}
                     <h4><b>Events Available</b></h4>
                     <ul>
-                        {% for event in event_type.category.all %}
+                        {% for event in category.events.all %}
                             <li>
                                 {{ event.title }} | <a href="{{ event.get_absolute_url }}">Details</a>
                             </li>

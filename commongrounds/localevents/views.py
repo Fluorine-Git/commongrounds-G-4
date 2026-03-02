@@ -1,14 +1,16 @@
 from django.shortcuts import render
-from django.views.generic.list import ListView
-from django.views.generic.detail import DetailView
 from .models import EventType, Event
 
-# Create your views here.
+def EventListView(request):
+    events = Event.objects.all().order_by('created_on')
+    event_type = EventType.objects.all().order_by('name')
+    ctx = {
+        "events" : events,
+        "categories" : event_type,
+    }
+    return render(request, "localevents/event_list.html", ctx)
 
-class EventListView(ListView):
-    model = EventType
-    template_name = "localevents/event_list.html"
-
-class EventDetailView(DetailView):
-    model = Event
-    template_name = "localevents/event_details.html"
+def EventDetailView(request, pk):
+    event = Event.objects.get(pk=pk)
+    ctx = { "event" : event }
+    return render(request, "localevents/event_detail.html", ctx)

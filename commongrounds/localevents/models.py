@@ -1,7 +1,6 @@
 from django.db import models
 from django.urls import reverse
 
-# Create your models here.
 class EventType(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
@@ -21,7 +20,7 @@ class Event(models.Model):
     category = models.ForeignKey(
         EventType,
         on_delete=models.CASCADE,
-        related_name='category'
+        related_name='events'
     )
 
     description = models.TextField()
@@ -40,7 +39,7 @@ class Event(models.Model):
         return '{} last update on {}'.format(self.title, self.updated_on)
     
     def get_absolute_url(self):
-        return reverse('localevents:event_details', args=[str(self.pk)])
+        return reverse('localevents:event_detail', args=[str(self.pk)])
     
     class Meta:
         ordering = ['start_time',]
