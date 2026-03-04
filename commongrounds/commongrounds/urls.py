@@ -24,6 +24,6 @@ urlpatterns = [
     path('localevents/', include('localevents.urls', namespace="localevents")),
     path('bookclub/', include('bookclub.urls', namespace="bookclub")),
     path('diyprojects/', include('diyprojects.urls', namespace="diyprojects")),
-
+    path('commissions/', include('commissions.urls', namespace='commissions')),
     path('', home, name='home'),
 ]

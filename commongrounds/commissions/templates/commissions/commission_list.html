@@ -1,0 +1,23 @@
+{% extends "commissions/commissions_base.html" %}
+{% load static %}
+
+{% block contents %}
+    <h2> Types of Requests </h2>
+    <div>
+        <ul>
+            {% for type in types %}
+                <h3>{{type.name}}</h3>
+                <p>{{type.description}}</p>
+            {% endfor %}
+        </ul>
+    </div>
+    <div>
+        <h2> Current Requests </h2>
+        <ul>
+            {% for request in requests %}
+                <h3>{{request.title}}</h3>
+                <li> <a href='{{ request.get_absolute_url }}'>{{request.title}}_details</a> </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

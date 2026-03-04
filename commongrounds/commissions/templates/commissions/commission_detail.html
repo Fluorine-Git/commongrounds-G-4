@@ -1,0 +1,16 @@
+{% extends "commissions/commissions_base.html" %}
+{% load static %}
+
+{% block contents %}
+    <h3> {{commission.title}} </h3>
+    <ul>
+        <li>Description: {{commission.description}}</li>
+        <li>Number of People Required: {{commission.people_required}}</li>
+        <li>Created on: {{commission.created_on}}</li>
+        <li>Updated on: {{commission.updated_on}}</li>
+    </ul>
+
+    <a href="/commissions/requests/list">
+        <button type="button">Back to Commission</button>
+    </a>
+{% endblock %}
