@@ -1,13 +1,10 @@
-@import url(base.css); /*when importing, include semi-colon at the end of each imports!!*/
+@import url(base.css);
 
 .topbar {
     justify-content: left;
     align-items: center;
     width: 100%;
     position: relative;
-    /* An error occurred with the positioning of the top bar because I added a line for padding with
-       top padding equal to 20px. To fix that, I removed the padding, it it basically just moved the
-       topbar up by 20px. The padding automatically moves outside the box. */
 }
 
 .topbar .nav-project {
@@ -35,13 +32,13 @@
 }
 
 .topbar .nav-project #hamburger {
-    margin: 0 0 0 40px;   /* Top: 0, Right: 0, Bottom: 0, Left: 25px */
-    line-height: 1;       /* Prevents text-spacing from pushing it up or down */
+    margin: 0 0 0 40px;
+    line-height: 1;
     font-size: 30px;
     font-weight: bold;
     cursor: pointer;
     color: #fffefe;
-    display: inline-flex; /* Changed from block to inline-flex for better centering */
+    display: inline-flex;
     align-items: center;
     transition: transform 1s ease-in-out;
 }
@@ -57,7 +54,6 @@
     left: -250px;
     padding-top: 90px;
     background-color: #fdf0d5;
-    /*for transition eme eme slidee*/
     transition: left 1s ease-in-out;
     box-shadow: 5px 0 15px rgba(0,0,0,0.3);
     z-index: 998;
@@ -65,7 +61,7 @@
 
 #side-tab-toggle:checked ~ .topbar .nav-project #hamburger {
     color: #ffffff;
-    transform: rotate(90deg); /* Rotates the ☰ icon when open */
+    transform: rotate(90deg);
 }
 
 #side-tab-toggle:checked ~ .topbar .nav-project #hamburger:hover {
