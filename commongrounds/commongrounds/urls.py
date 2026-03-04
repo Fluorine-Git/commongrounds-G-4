@@ -18,11 +18,11 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('commissions/', include('commissions.urls', namespace='commissions')),
     path('admin/', admin.site.urls),
     
 
 
 
-    
+    path('commissions/', include('commissions.urls', namespace='commissions')),
+
 ]
