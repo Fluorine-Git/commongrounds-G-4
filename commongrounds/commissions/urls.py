@@ -6,4 +6,4 @@ urlpatterns = [
     path('request/<int:pk>', detail_view, name='detail_view'),
 ] 
 
-app_name = 'commissionrequests'
+app_name = 'commissions'

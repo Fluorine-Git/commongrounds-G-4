@@ -21,4 +21,4 @@ class Commission(models.Model):
         return self.title
     
     def get_absolute_url(self):
-        return reverse('commissionrequests:detail_view', args=[int(self.id)])
+        return reverse('commissions:detail_view', args=[int(self.id)])
