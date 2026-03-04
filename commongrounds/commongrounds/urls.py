@@ -24,4 +24,5 @@ urlpatterns = [
     path('bookclub/', include('bookclub.urls', namespace="bookclub")),
 
     
+    
 ]
