@@ -1,16 +1,22 @@
-{% extends "commissionrequests/base.html" %}
+{% extends "commissions/base.html" %}
 
 {% block body %}
-    <h3> Types </h3>
-    <ul>
-        {% for type in types %}
-            <li> {{type.name}}: {{type.description}}</li>
-        {% endfor %}
-    </ul>
-    <h3> Requests </h3>
-    <ul>
-        {% for request in requests %}
-            <li> <a href='{{ request.get_absolute_url }}'>{{request.title}}</a> </li>
-        {% endfor %}
-    </ul>
+    <h2> Types of Requests </h2>
+    <div>
+        <ul>
+            {% for type in types %}
+                <h3>{{type.name}}</h3>
+                <p>{{type.description}}</p>
+            {% endfor %}
+        </ul>
+    </div>
+    <div>
+        <h2> Current Requests </h2>
+        <ul>
+            {% for request in requests %}
+                <h3>{{request.title}}</h3>
+                <li> <a href='{{ request.get_absolute_url }}'>{{request.title}}_details</a> </li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock %}
