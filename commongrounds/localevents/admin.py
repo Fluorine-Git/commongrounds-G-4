@@ -16,17 +16,18 @@ class EventTypeAdmin(admin.ModelAdmin):
 class EventAdmin(admin.ModelAdmin):
     model = EventType
     search_fields = ('title', 'category',)
+    readonly_fields = ("created_on", "updated_on")
 
     list_display = (
         'title', 'category', 'description',
         'location', 'start_time', 'end_time',
         'created_on', 'updated_on',
-        )
+    )
 
     list_filter = (
         'description', 'location', 'start_time',
         'end_time', 'created_on', 'updated_on',
-        )
+    )
 
     fieldsets = [
         ('Details', {

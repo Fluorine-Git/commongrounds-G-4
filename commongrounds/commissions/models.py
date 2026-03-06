@@ -16,6 +16,12 @@ class CommissionType(models.Model):
 class Commission(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
+    type = models.ForeignKey(
+        CommissionType,
+        on_delete=models.CASCADE,
+        related_name='commissions',
+        null=True
+    )
     people_required = models.IntegerField()
     created_on = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     updated_on = models.DateTimeField(auto_now=True, null=True, blank=True)

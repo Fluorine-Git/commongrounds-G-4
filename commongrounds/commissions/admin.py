@@ -4,6 +4,7 @@ from .models import Commission, CommissionType
 
 class CommissionAdmin(admin.ModelAdmin):
     model = Commission
+    readonly_fields = ("created_on", "updated_on")
 
 
 class CommissionTypeAdmin(admin.ModelAdmin):
