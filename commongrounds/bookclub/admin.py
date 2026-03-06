@@ -16,6 +16,7 @@ class GenreAdmin(admin.ModelAdmin):
 class BookAdmin(admin.ModelAdmin):
     model = Book
     search_fields = ('title', 'author',)
+    readonly_fields = ("created_on", "updated_on")
     list_display = (
         'title', 'genre', 'author', 'publication_year',
         'created_on', 'updated_on',

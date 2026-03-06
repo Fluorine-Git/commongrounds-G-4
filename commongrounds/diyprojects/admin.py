@@ -19,7 +19,7 @@ class ProjectAdmin(admin.ModelAdmin):
                     'materials', 'steps', 'created_on', 'updated_on',)
     list_filter = ('description', 'materials', 'steps', 'created_on',
                    'updated_on',)
-
+    readonly_fields = ("created_on", "updated_on")
     fieldsets = [
         ('Details', {
             'fields': [
