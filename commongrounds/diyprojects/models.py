@@ -28,8 +28,8 @@ class Project(models.Model):
     description = models.TextField()
     materials = models.TextField()
     steps = models.TextField()
-    created_on = models.DateTimeField()
-    updated_on = models.DateTimeField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return '{} last updated on {}'.format(self.title, self.updated_on)
